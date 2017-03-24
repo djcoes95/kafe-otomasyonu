@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="otomasyon.kafeotomasyonu.MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/coffee"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/beyaz">
+
+        <Button
+            android:id="@+id/btn_girisyap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/girisyap"
+            android:layout_weight="1"
+            android:background="@color/beyaz"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btn_kayitol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kayitol"
+            android:layout_weight="1"
+            android:background="@color/beyaz"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</RelativeLayout>

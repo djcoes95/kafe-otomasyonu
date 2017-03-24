@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Kafe Otomasyonu</string>
+
+    <!-- Login işlemleri için gerekli stringler -->
+    <string name="girisyap">Giriş Yap</string>
+    <string name="adsoyad">Ad Soyad</string>
+    <string name="giris">Giriş ></string>
+    <string name="cikisyap">Çıkış Yap</string>
+    <string name="kayitol">Kayıt Ol</string>
+    <string name="kayit">Kayıt ></string>
+    <string name="mail">E-Posta</string>
+    <string name="parola">Parola</string>
+    <string name="mailgir">E-postanızı Girmeyi Unuttunuz!</string>
+    <string name="parolasifirla">Parolanızı Mı Unuttunuz?</string>
+    <string name="parolanizisifirlayin">Parolanızı Sıfırlayın</string>
+    <string name="sifirla">Sıfırla ></string>
+    <string name="parolagir">Parolanızı Girmeyi Unuttunuz!</string>
+    <string name="parolakisa">Parolanız Çok Kısa! En Az 6 Karakter Girmelisiniz</string>
+    <string name="girishatasi">Giriş Hatası! Lütfen E-posta ve Parolanızı Kontrol Ediniz!</string>
+    <string name="baglantihatasi">İnternet Bağlantınızı Kontrol Edin!</string>
+    <string name="adsoyadgir">Ad - Soyad Girmeyi Unuttunuz!</string>
+    <string name="parola6karakter">Parolanız en az 6 karakter olmalı!</string>
+    <string name="epostagonderildi">Sıfırlama E-postası Başarıyla Gönderildi!</string>
+    <string name="epostagonderilemedi">Lütfen Sistemimize Kayıtlı E-posta Giriniz!</string>
+
+
+</resources>
