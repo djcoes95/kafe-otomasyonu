@@ -24,7 +24,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".HakkindaEkraniActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".KullaniciActivity" />
+        <activity android:name=".MusteriActivity" />
         <activity android:name=".ParolaSifirlaActivity"></activity>
     </application>
 

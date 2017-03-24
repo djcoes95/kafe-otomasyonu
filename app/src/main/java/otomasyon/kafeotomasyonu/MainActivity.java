@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,26 +14,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import otomasyon.kafeotomasyonu.Modal.Kullanici;
-
 public class MainActivity extends AppCompatActivity {
     Button giris, kayit;
+    //Firebase İçin gerekliler
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Eğer kullanıcı daha önceden giriş yaptıysa önbellekte tutuluyor.
+        //Tekrar tekrar oturum açtırmamak için alttaki metot kullaılmıştır
         atlamaYapilacakMi();
         setContentView(R.layout.activity_main);
+        //Giriş butonuna tıklanınca
         girisSetOnClick();
+        //kayıt ol butonuna tıklanınca
         kayitolSetOnCLick();
 
-    }
-
-    private void atlamaYapilacakMi() {
-        if(oturumAcikMi()){
-            garsonMu();
-        }
     }
 
     private void kayitolSetOnCLick() {
@@ -72,8 +69,18 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    private void atlamaYapilacakMi() {
+        //Eğer oturum açılmışsa kullanıcı garson mu müşteri mi olduğunu anlamamız lazım
+        if(oturumAcikMi()){
+            garsonMu();
+        }
+    }
+
     Boolean garsonVarMi;
     public void garsonMu(){
+
+        //Bu metotta kullanıcı idsi alınır. Garsonların altında idyi arıyor. Eğer id varsa
+        //GarsonActivity'e gidiyor. Yoksa MusteriActivity'e Gidiyor
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         final String id = user.getUid();
@@ -88,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(MainActivity.this, KullaniciActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MusteriActivity.class);
                     startActivity(intent);
                     finish();
                 }

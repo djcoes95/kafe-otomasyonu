@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -24,9 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import otomasyon.kafeotomasyonu.Modal.Kullanici;
-import otomasyon.kafeotomasyonu.Modal.LoginController;
-
 public class LoginActivity extends AppCompatActivity {
     Button girisYap, parolasifirla;
     EditText mail,parola;
@@ -39,10 +35,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
+
+        //Üstteki StatusBar çubuğunun rengini arkaplanla aynı yapar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
         }
+
+
         mail = (EditText) findViewById(R.id.et_mail);
         parola = (EditText) findViewById(R.id.et_parola);
         girisYap= (Button) findViewById(R.id.btn_giris);
@@ -83,7 +83,10 @@ public class LoginActivity extends AppCompatActivity {
                             .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-
+                                    if (parola.length()<6){
+                                        parola.setError(getText(R.string.parola6karakter));
+                                        return;
+                                    }
                                     if (!task.isSuccessful()) {
                                         Toast.makeText(LoginActivity.this, R.string.girishatasi, Toast.LENGTH_SHORT).show();
 
@@ -114,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Intent intent = new Intent(LoginActivity.this, KullaniciActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MusteriActivity.class);
                     startActivity(intent);
                     finish();
                 }
