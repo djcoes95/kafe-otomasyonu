@@ -18,7 +18,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:background="@color/beyaz">
+        android:background="@color/colorPrimary">
 
         <Button
             android:id="@+id/btn_girisyap"
@@ -26,8 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@string/girisyap"
             android:layout_weight="1"
-            android:background="@color/beyaz"
-            android:textAllCaps="false"/>
+            style="@style/butonlar"/>
 
         <Button
             android:id="@+id/btn_kayitol"
@@ -35,8 +34,7 @@
             android:layout_height="wrap_content"
             android:text="@string/kayitol"
             android:layout_weight="1"
-            android:background="@color/beyaz"
-            android:textAllCaps="false"/>
+            style="@style/butonlar"/>
     </LinearLayout>
 
 </RelativeLayout>

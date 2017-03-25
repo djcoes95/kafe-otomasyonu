@@ -5,25 +5,25 @@ package otomasyon.kafeotomasyonu.Modal;
  */
 
 public class Urunler {
-    private String urunAdi;
-    private String fiyat;
-    public Urunler(String urunAdi , String fiyat){
-        this.urunAdi = urunAdi;
-        this.fiyat = fiyat;
+    private String urunadi;
+    private String urunfiyati;
+    public Urunler(String urunadi , String urunfiyati){
+        this.urunadi = urunadi;
+        this.urunfiyati = urunfiyati;
     }
-    public String getUrunAdi() {
-        return urunAdi;
-    }
-
-    public void setUrunAdi(String urunAdi) {
-        this.urunAdi = urunAdi;
+    public String getUrunadi() {
+        return urunadi;
     }
 
-    public String getFiyat() {
-        return fiyat;
+    public void setUrunadi(String urunadi) {
+        this.urunadi = urunadi;
     }
 
-    public void setFiyat(String fiyat) {
-        this.fiyat = fiyat;
+    public String getUrunfiyati() {
+        return urunfiyati;
+    }
+
+    public void setUrunfiyati(String urunfiyati) {
+        this.urunfiyati = urunfiyati;
     }
 }

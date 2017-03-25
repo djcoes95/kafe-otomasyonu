@@ -23,11 +23,7 @@
             android:text="@string/girisyap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_girisyap"
-            android:textSize="@dimen/basliklar"
-            android:gravity="center"
-            android:paddingBottom="35px"
-            android:textColor="@color/colorPrimaryDark"/>
+            style="@style/basliklar"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -54,23 +50,16 @@
             android:text="@string/giris"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
             android:id="@+id/btn_giris"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimaryDark"
-            android:background="@color/colorPrimary"
-            android:textSize="@dimen/normalyazi"/>
+            style="@style/butonlar"/>
 
         <Button
             android:text="@string/parolasifirla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:id="@+id/btn_parolasifirla"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimaryDark"
-            android:background="@color/colorPrimary"
-            android:textSize="@dimen/normalyazi"/>
+            android:layout_gravity="center"
+            style="@style/butonlar"/>
 
     </LinearLayout>
 

@@ -22,10 +22,10 @@
         </activity>
         <activity android:name=".GarsonEkraniActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".HakkindaEkraniActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".MusteriActivity" />
-        <activity android:name=".ParolaSifirlaActivity"></activity>
+        <activity android:name=".ParolaSifirlaActivity" />
+        <activity android:name=".SiparisEkle"/>
     </application>
 
 </manifest>

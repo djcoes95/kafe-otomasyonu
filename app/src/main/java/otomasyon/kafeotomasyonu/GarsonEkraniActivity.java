@@ -1,5 +1,6 @@
 package otomasyon.kafeotomasyonu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import otomasyon.kafeotomasyonu.Modal.MasaController;
+import otomasyon.kafeotomasyonu.Modal.Siparis;
 
 public class GarsonEkraniActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -52,7 +54,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
     }
     void butonOlustur(int gelen){
         int satir=1,sutun=4,masaid=1;
-        GridLayout gridLayout = (GridLayout)findViewById(R.id.activity_garson);
+        GridLayout gridLayout = (GridLayout)findViewById(R.id.masalar);
         ///HATA VAR DÜZELT MASA SATIR SÜTÜN BOZUK GELİYOR
         if(gelen>5){
             satir = (gelen/4)+1;
@@ -63,6 +65,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
             Button myButton = new Button(this);
                 myButton.setId(masaid);
                 myButton.setText("Masa " + masaid);
+                myButton.setTextAppearance(this,R.style.butonlar);
                 gridLayout.addView(myButton,i);
             masaid++;
             final int id=myButton.getId();
@@ -73,6 +76,9 @@ public class GarsonEkraniActivity extends AppCompatActivity {
                 Toast.makeText(view.getContext(),
                         "Masa "+ id +"'ya tiklandi", Toast.LENGTH_SHORT)
                         .show();
+                Intent i = new Intent(GarsonEkraniActivity.this, SiparisEkle.class);
+                startActivity(i);
+
             }
         });
         }

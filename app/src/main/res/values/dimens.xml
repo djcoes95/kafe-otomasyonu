@@ -4,4 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="basliklar">24sp</dimen>
     <dimen name="normalyazi">18sp</dimen>
+    <dimen name="butonlar">18sp</dimen>
+    <dimen name="baslikpaddingbottom">18sp</dimen>
+
 </resources>
