@@ -77,6 +77,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
                         "Masa "+ id +"'ya tiklandi", Toast.LENGTH_SHORT)
                         .show();
                 Intent i = new Intent(GarsonEkraniActivity.this, SiparisEkle.class);
+                i.putExtra("masaNumarasi",id);
                 startActivity(i);
 
             }

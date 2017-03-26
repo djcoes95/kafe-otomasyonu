@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -33,7 +34,7 @@ public class SiparisEkle extends AppCompatActivity {
         setContentView(R.layout.activity_siparis_ekle);
         urunSayisi();
         siparisGoster();
-        
+        masaBilgileri();
     }
 
     private void siparisGoster() {
@@ -57,6 +58,14 @@ public class SiparisEkle extends AppCompatActivity {
                 // ...
             }
         });
+    }
+    private void masaBilgileri()
+    {
+        DatabaseReference myRef = database.getReference("siparisler");
+        Bundle extras = getIntent().getExtras();
+        int masaid = extras.getInt("masaNumarasi");
+        TextView masa = (TextView) findViewById(R.id.textMasa);
+        masa.setText("Masa "+String.valueOf(masaid));
     }
     private void urunSayisi() {
         String urunSayisi="0";
@@ -93,8 +102,6 @@ public class SiparisEkle extends AppCompatActivity {
                             .show();
                     Button inputButton = (Button) findViewById(id);
                     inputDialog(inputButton.getText().toString());
-                    //Intent i = new Intent(SiparisEkle.this, SiparisEkle.class);
-                    //startActivity(i);
 
                 }
             });
