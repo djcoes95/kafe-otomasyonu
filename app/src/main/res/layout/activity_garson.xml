@@ -9,10 +9,30 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="otomasyon.kafeotomasyonu.GarsonEkraniActivity">
+
+    <GridLayout
+        android:id="@+id/layoutText"
+        android:layout_width="match_parent"
+        android:background="@color/mavi"
+        android:layout_height="100px">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/beyaz"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="65px"
+            android:text="Masalar"/>
+
+    </GridLayout>
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/masalar">
-
+        android:id="@+id/masalar"
+        android:layout_below="@+id/layoutText"
+        android:layout_alignParentStart="true">
     </GridLayout>
 </RelativeLayout>
