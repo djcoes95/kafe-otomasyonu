@@ -5,13 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="otomasyon.kafeotomasyonu.SiparisEkle">
+
+    <GridLayout
+        android:id="@+id/layoutText"
+        android:layout_width="match_parent"
+        android:background="@color/mavi"
+        android:layout_height="100px">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/beyaz"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="65px"
+            android:id="@+id/textMasa"/>
+    </GridLayout>
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/urunler">
+        android:id="@+id/urunler"
+        android:layout_below="@+id/layoutText"
+        android:layout_alignParentStart="true">
     </GridLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/textMasa"/>
 </RelativeLayout>
