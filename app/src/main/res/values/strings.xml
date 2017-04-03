@@ -2,6 +2,7 @@
     <string name="app_name">Kafe Otomasyonu</string>
 
     <!-- Login işlemleri için gerekli stringler -->
+    <string name="masalar">Masalar</string>
     <string name="girisyap">Giriş Yap</string>
     <string name="adsoyad">Ad Soyad</string>
     <string name="giris">Giriş ></string>

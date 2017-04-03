@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,13 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import otomasyon.kafeotomasyonu.Modal.MasaController;
-import otomasyon.kafeotomasyonu.Modal.Siparis;
-
 public class GarsonEkraniActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    TextView dene;
+    Button cikis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +29,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         //dene= (TextView) findViewById(R.id.tv_deneme);
         masaSayisi();
+        cikisSetOnClick();
     }
     private String masaSayisi() {
         String masaSayisi="0";
@@ -53,7 +50,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
         return masaSayisi;
     }
     void butonOlustur(int gelen){
-        int satir=1,sutun=4,masaid=1;
+        int satir=1,sutun=5,masaid=1;
         GridLayout gridLayout = (GridLayout)findViewById(R.id.masalar);
         ///HATA VAR DÜZELT MASA SATIR SÜTÜN BOZUK GELİYOR
         if(gelen>5){
@@ -65,7 +62,9 @@ public class GarsonEkraniActivity extends AppCompatActivity {
             Button myButton = new Button(this);
                 myButton.setId(masaid);
                 myButton.setText("Masa " + masaid);
-                myButton.setTextAppearance(this,R.style.butonlar);
+                myButton.setBackgroundResource(R.drawable.masabuton);
+                myButton.setTextAppearance(this,R.style.garsonMasaSecim);
+
                 gridLayout.addView(myButton,i);
             masaid++;
             final int id=myButton.getId();
@@ -83,5 +82,20 @@ public class GarsonEkraniActivity extends AppCompatActivity {
             }
         });
         }
+    }
+
+
+    private void cikisSetOnClick() {
+        cikis= (Button) findViewById(R.id.btn_garson_cikis);
+        cikis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(GarsonEkraniActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }
