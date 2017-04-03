@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private void menuListele() {
         menu = (ListView) findViewById(R.id.lv_menu);
         menuGetir();
-
         ArrayAdapter<String> veriAdaptoru=new ArrayAdapter<String>
                 (MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, urunler);
         listemiz.setAdapter(veriAdaptoru);
