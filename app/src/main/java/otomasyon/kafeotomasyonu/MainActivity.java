@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import otomasyon.kafeotomasyonu.Modal.MenuGetirController;
+import otomasyon.kafeotomasyonu.Modal.MenuGetirAdapter;
 import otomasyon.kafeotomasyonu.Modal.Urunler;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void menuListele() {
 
-        MenuGetirController adapter = new MenuGetirController(this,R.layout.menu_satir_layout,urunler);
+        MenuGetirAdapter adapter = new MenuGetirAdapter(this,R.layout.menu_satir_layout,urunler);
 
         menu = (ListView)findViewById(R.id.lv_menu);
         if(menu != null){

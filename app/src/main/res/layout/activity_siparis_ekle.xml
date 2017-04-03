@@ -12,11 +12,41 @@
         android:id="@+id/textMasa"
         style="@style/basliklar"
         android:layout_centerHorizontal="true"/>
-    <GridLayout
-        android:layout_below="@id/textMasa"
+    <!--<GridLayout-->
+        <!--android:layout_below="@id/textMasa"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/urunler">-->
+    <!--</GridLayout>-->
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/urunler">
-    </GridLayout>
+        android:id="@+id/lv_garson_menu"
+        android:layout_below="@+id/textMasa"
+        android:layout_above="@+id/siparisozet">
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/siparisozet"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sipariş Özeti"
+            style="@style/girismenuliste"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_siparis_ozeti"
+            android:inputType="textLongMessage"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/butonlar"
+            android:text="Sipariş Ver >"
+            android:layout_gravity="right"/>
+    </LinearLayout>
 
 </RelativeLayout>
