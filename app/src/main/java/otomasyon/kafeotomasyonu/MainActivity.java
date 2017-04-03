@@ -1,14 +1,11 @@
 package otomasyon.kafeotomasyonu;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,15 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import otomasyon.kafeotomasyonu.Modal.UrunlerListe;
+import otomasyon.kafeotomasyonu.Modal.MenuGetirController;
+import otomasyon.kafeotomasyonu.Modal.Urunler;
 
 public class MainActivity extends AppCompatActivity {
     Button giris, kayit;
     ListView menu;
-    final List<UrunlerListe> urunler=new ArrayList<UrunlerListe>();
-
+    ArrayList<Urunler> urunler = new ArrayList<Urunler>();
     //Firebase İçin gerekliler
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -37,23 +33,23 @@ public class MainActivity extends AppCompatActivity {
 
         //Eğer kullanıcı daha önceden giriş yaptıysa önbellekte tutuluyor.
         //Tekrar tekrar oturum açtırmamak için alttaki metot kullaılmıştır
+        menuGetir();
         atlamaYapilacakMi();
         setContentView(R.layout.activity_main);
         //Giriş butonuna tıklanınca
         girisSetOnClick();
         //kayıt ol butonuna tıklanınca
         kayitolSetOnCLick();
-
-        menuListele();
-
     }
 
     private void menuListele() {
-        menu = (ListView) findViewById(R.id.lv_menu);
-        menuGetir();
-        ArrayAdapter<String> veriAdaptoru=new ArrayAdapter<String>
-                (MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, urunler);
-        listemiz.setAdapter(veriAdaptoru);
+
+        MenuGetirController adapter = new MenuGetirController(this,R.layout.menu_satir_layout,urunler);
+
+        menu = (ListView)findViewById(R.id.lv_menu);
+        if(menu != null){
+            menu.setAdapter(adapter);
+        }
     }
 
     private void menuGetir() {
@@ -65,9 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 for (int i=1;i<=Integer.parseInt(dataSnapshot.getChildrenCount()+"");i++)
                 {
                     String urunadi = (String) dataSnapshot.child(String.valueOf(i)).child("urunadi").getValue();
-                    String fiyat = (String) String.valueOf(dataSnapshot.child(String.valueOf(i)).child("urunfiyati").getValue());
-                    urunler.add(new UrunlerListe(urunadi,fiyat));
+                    String fiyat =  String.valueOf(dataSnapshot.child(String.valueOf(i)).child("urunfiyati").getValue());
+                    urunler.add(new Urunler(urunadi,fiyat+" ₺"));
                 }
+
+                menuListele();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -81,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void kayitolSetOnCLick() {
         kayit = (Button) findViewById(R.id.btn_kayitol);
-        kayit.setBackgroundColor(Color.TRANSPARENT);
         kayit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

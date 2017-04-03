@@ -5,6 +5,7 @@
     <dimen name="basliklar">24sp</dimen>
     <dimen name="normalyazi">18sp</dimen>
     <dimen name="butonlar">18sp</dimen>
-    <dimen name="baslikpaddingbottom">18sp</dimen>
+    <dimen name="baslikpaddingbottom">15dp</dimen>
+    <dimen name="girismenuliste">18sp</dimen>
 
 </resources>

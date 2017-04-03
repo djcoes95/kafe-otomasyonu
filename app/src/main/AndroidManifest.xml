@@ -25,7 +25,7 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".MusteriActivity" />
         <activity android:name=".ParolaSifirlaActivity" />
-        <activity android:name=".SiparisEkle"/>
+        <activity android:name=".SiparisEkle" />
     </application>
 
 </manifest>
