@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Bilal\AndroidStudioProjects\kafe-otomasyonu\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="10944ccb9d8f895cadbe872f6dc332d73292801c">
+        <dex dex="C:\Users\Bilal\AndroidStudioProjects\kafe-otomasyonu\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2d1606f9de8ea8fcd5b7af86bd94aed123909c6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Bilal\AndroidStudioProjects\kafe-otomasyonu\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Bilal\AndroidStudioProjects\kafe-otomasyonu\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f6dbfff0982c8aab168bf60a927f0922ad9a9f93\classes.dex" />
+    </item>
+
+</items>

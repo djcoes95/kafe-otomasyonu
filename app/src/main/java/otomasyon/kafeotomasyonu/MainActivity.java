@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> veriAdaptoru=new ArrayAdapter<String>
                 (MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, urunler);
-        //(C) adımı
         listemiz.setAdapter(veriAdaptoru);
     }
 
