@@ -41,7 +41,12 @@ public class SiparisEkle extends AppCompatActivity {
         //urunSayisi();
         siparisGoster();
         masaBilgileri();
+        siparisVersetOnClick();
     }
+
+    private void siparisVersetOnClick() {
+    }
+
     private void menuListele() {
 
         SiparisEkleAdapter adapter = new SiparisEkleAdapter(this,R.layout.siparis_satir_layout,urunler);
@@ -60,7 +65,7 @@ public class SiparisEkle extends AppCompatActivity {
                 {
                     String urunadi = (String) dataSnapshot.child(String.valueOf(i)).child("urunadi").getValue();
                    // String fiyat = (String) String.valueOf(dataSnapshot.child(String.valueOf(i)).child("urunfiyati").getValue());
-                    urunler.add(new SiparisGetir(urunadi));
+                    urunler.add(new SiparisGetir(urunadi,0));
     //                urunlerr.add(new UrunlerListe(urunadi,fiyat));
      //               butonOlustur(i,urunadi);
      //               Toast.makeText(SiparisEkle.this, urunadi, Toast.LENGTH_SHORT).show();

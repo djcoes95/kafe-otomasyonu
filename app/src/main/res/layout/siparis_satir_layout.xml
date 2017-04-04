@@ -22,13 +22,22 @@
         android:layout_marginRight="5dp"
         style="@style/butonlar"
         android:text="-" />
+    <TextView
+        android:id="@+id/urun_sayisi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/delete_btn"
+        android:layout_marginRight="5dp"
+        style="@style/butonlar"
+        android:text="0" />
 
     <Button
         android:id="@+id/add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/delete_btn"
         android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/urun_sayisi"
         android:layout_marginRight="10dp"
         style="@style/butonlar"
         android:text="+" />
