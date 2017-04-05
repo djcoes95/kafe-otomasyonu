@@ -14,14 +14,16 @@ public class MusteriActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kullanici);
-        cikis= (Button) findViewById(R.id.btn_cikisyap);
+        //çıkış yap butonuna basılınca
         cikisSetOnClick();
     }
 
     private void cikisSetOnClick() {
+        cikis= (Button) findViewById(R.id.btn_cikisyap);
         cikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //firebase çıkış yap metodu
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(MusteriActivity.this, MainActivity.class);
                 startActivity(intent);
