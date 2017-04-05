@@ -23,6 +23,7 @@ import otomasyon.kafeotomasyonu.Modal.Urunler;
 public class MainActivity extends AppCompatActivity {
     Button giris, kayit;
     ListView menu;
+    //Menüyü getirmek için gerekli listeyi oluşturduk
     ArrayList<Urunler> urunler = new ArrayList<Urunler>();
     //Firebase İçin gerekliler
     private FirebaseAuth mAuth;
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //Menü getir metodunu çağırdık
+        menuGetir();
         //Eğer kullanıcı daha önceden giriş yaptıysa önbellekte tutuluyor.
         //Tekrar tekrar oturum açtırmamak için alttaki metot kullaılmıştır
-        menuGetir();
         atlamaYapilacakMi();
         setContentView(R.layout.activity_main);
         //Giriş butonuna tıklanınca
@@ -43,28 +44,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void menuListele() {
-
+        //Menüyü düzgün bir şekide göstermek için MenuGetirAdapter adlı class oluşturduk
+        //menu_satir_layout ile listenin her bir satırını oluşturduk ve urunler adlı diziyi atadık
         MenuGetirAdapter adapter = new MenuGetirAdapter(this,R.layout.menu_satir_layout,urunler);
-
+        //listviewi tanımladık
         menu = (ListView)findViewById(R.id.lv_menu);
         if(menu != null){
+            //menü boş değilse yani verileri set ettik
             menu.setAdapter(adapter);
         }
     }
 
     private void menuGetir() {
-
+        //Firebase veritabanında urunleri referans gösterdik
         DatabaseReference myRef = database.getReference("urunler");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //ürünleri for döngüsüyle dolaşıyoruz
                 for (int i=1;i<=Integer.parseInt(dataSnapshot.getChildrenCount()+"");i++)
                 {
+                    //sırayla ürün adını urunadi adlı stringe atıyoruz
                     String urunadi = (String) dataSnapshot.child(String.valueOf(i)).child("urunadi").getValue();
+                    //sırayla ürün fiyatlarını fiyat adlı stringe atıyoruz
                     String fiyat =  String.valueOf(dataSnapshot.child(String.valueOf(i)).child("urunfiyati").getValue());
+                    //urunleri sırayla urunler listesine ekliyoruz fiyatın sonuna tl işareti koyduk.
                     urunler.add(new Urunler(urunadi,fiyat+" ₺"));
                 }
-
+                //for döngüsüyle urunleri urunler dizi listesine attık. ve menu listele metodunu çalıştırdık
                 menuListele();
             }
             @Override
@@ -121,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
     Boolean garsonVarMi;
     public void garsonMu(){
-
         //Bu metotta kullanıcı idsi alınır. Garsonların altında idyi arıyor. Eğer id varsa
         //GarsonActivity'e gidiyor. Yoksa MusteriActivity'e Gidiyor
         mAuth = FirebaseAuth.getInstance();

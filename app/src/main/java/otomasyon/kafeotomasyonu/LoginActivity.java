@@ -42,13 +42,15 @@ public class LoginActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
         }
 
-
+        //tasarımda kullandığımız komponentleri tanımladık
         mail = (EditText) findViewById(R.id.et_mail);
         parola = (EditText) findViewById(R.id.et_parola);
         girisYap= (Button) findViewById(R.id.btn_giris);
         parolasifirla= (Button) findViewById(R.id.btn_parolasifirla);
 
+        //giriş yap butonuna tıklayınca çalışacak metot
         setOnGirisYapListener();
+        //parola sıfırla butonuna basıldığında çalışacak metot
         setOnParolaSifirla();
     }
 
@@ -56,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         parolasifirla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //parola sıfırlama sayfasına gitmesi içi intent yazdık
                 Intent intent = new Intent(LoginActivity.this, ParolaSifirlaActivity.class);
                 startActivity(intent);
                 finish();
@@ -67,30 +70,39 @@ public class LoginActivity extends AppCompatActivity {
         girisYap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mail alanına yazılan veriyi email değişkenine attık
                 email = mail.getText().toString();
+                // parola alanına yazılan veriyi password değişkenine attık
                 password = parola.getText().toString();
                 if (TextUtils.isEmpty(email)) {
+                    //eğer eposta girilmemişse hata döndürecek
                     Toast.makeText(LoginActivity.this, R.string.mailgir , Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
+                    //parola girilmemişse hata döndürecek
                     Toast.makeText(LoginActivity.this, R.string.parolagir , Toast.LENGTH_SHORT).show();
                     return;
                 }
                 else {
+                    //giriş yapmak için gerekli firebase metodu alınan email ve parolayı parametrele gönderdik
                     mAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    //eğer parola 6 haneden kısaysa hata döndürüyoruz
                                     if (parola.length()<6){
                                         parola.setError(getText(R.string.parola6karakter));
                                         return;
                                     }
                                     if (!task.isSuccessful()) {
+                                        //eğer giriş başarılı değilse hata döndürdük
                                         Toast.makeText(LoginActivity.this, R.string.girishatasi, Toast.LENGTH_SHORT).show();
 
                                     }else{
+                                        //eğer giriş başarılıysa garson mu kullanıcı mı olduğunu anlamak için
+                                        // garsonMu metodunu çağırdık
                                         garsonMu();
                                     }
                                 }
@@ -103,20 +115,28 @@ public class LoginActivity extends AppCompatActivity {
 
     Boolean garsonVarMi;
     public void garsonMu(){
+        //firebase kullanıcı girişi metodları için gerekli
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
+        //user.getUid ile firebasin her kullanıcıya verdiği kullanıcı idyi çektik
         final String id = user.getUid();
+        //veritabanında garsonları referans aldık
         DatabaseReference myRef = database.getReference("garsonlar");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //bu metot ile garsonların altında girilen kullanıcı id var mı diye bakılıyor
+                //exits metodu bize true ya da false döndürüyor. Eğer garsonların altında girilen kullanıcı
+                // idsi varsa true dönecek
                 garsonVarMi=dataSnapshot.child(id).exists();
                 if(garsonVarMi){
+                    //eğer garsonsa garson ekraına gönderiyoruz
                     Intent intent = new Intent(LoginActivity.this, GarsonEkraniActivity.class);
                     startActivity(intent);
                     finish();
                 }
                 else {
+                    //değilse zaten müşteridir müşteri ekranına gönderiyoruz
                     Intent intent = new Intent(LoginActivity.this, MusteriActivity.class);
                     startActivity(intent);
                     finish();
@@ -126,6 +146,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
+                //veriyi çekememişsek internet bağlantısında hata vardır. Bu yüzden hata döndürüyoruz
                 Toast.makeText(LoginActivity.this, R.string.baglantihatasi, Toast.LENGTH_SHORT).show();
             }
         });
