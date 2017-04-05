@@ -42,7 +42,7 @@ public class SignupActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
         }
-        //gerekli komponentler
+        //gerekli komponentler tanımlandı
         adSoyad = (EditText) findViewById(R.id.et_kayit_ad);
         mail = (EditText) findViewById(R.id.et_kayit_mail);
         parola = (EditText) findViewById(R.id.et_kayit_parola);
