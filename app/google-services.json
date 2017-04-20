@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1084394544499-hhv1aho6i05gesedhm92ue2e1tuhla3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "otomasyon.kafeotomasyonu",
+            "certificate_hash": "4c3c3b8899c977706a191a38e959e964bc71def6"
+          }
+        },
+        {
           "client_id": "1084394544499-kegj3trje0ucucnitg978dkm17ujh7to.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

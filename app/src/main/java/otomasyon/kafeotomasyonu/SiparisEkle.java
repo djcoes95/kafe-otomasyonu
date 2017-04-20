@@ -2,8 +2,11 @@ package otomasyon.kafeotomasyonu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,7 +38,19 @@ public class SiparisEkle extends AppCompatActivity {
     }
 
     private void siparisVersetOnClick() {
+        Button siparisVer = (Button) findViewById(R.id.siparisver);
         //henüz siparişver butonu aktif değil
+        siparisVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(SiparisGetir sp : urunler){
+                    if(sp.getUrunsayisi()>0){
+
+                        Toast.makeText(SiparisEkle.this, sp.getUrunadi() + sp.getUrunsayisi() + "\n", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
     }
 
     private void menuListele() {
