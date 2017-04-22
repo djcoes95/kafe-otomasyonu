@@ -2,11 +2,10 @@ package otomasyon.kafeotomasyonu;
 
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -21,8 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import otomasyon.kafeotomasyonu.Modal.Kullanici;
-import otomasyon.kafeotomasyonu.Modal.LoginController;
 import otomasyon.kafeotomasyonu.Modal.SignUpController;
 
 public class SignupActivity extends AppCompatActivity {

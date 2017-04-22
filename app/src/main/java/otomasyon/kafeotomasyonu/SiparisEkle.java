@@ -6,17 +6,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import otomasyon.kafeotomasyonu.Modal.SiparisEkleAdapter;
+import otomasyon.kafeotomasyonu.Modal.SiparisEkleController;
 import otomasyon.kafeotomasyonu.Modal.SiparisGetir;
 
 public class SiparisEkle extends AppCompatActivity {
@@ -31,13 +36,16 @@ public class SiparisEkle extends AppCompatActivity {
         setContentView(R.layout.activity_siparis_ekle);
         //sipariş göster metodu
         siparisGoster();
+
+        TextView masa = (TextView) findViewById(R.id.textMasa);
         //masabilgilerini aldığımız metot
-        masaBilgileri();
+        masa.setText("Masa "+ masaBilgileri());
         //sipariş ver butonuna tıklandığında olacaklar
-        siparisVersetOnClick();
+        int id = siparisIdBelirle();
+        siparisVersetOnClick(id);
     }
 
-    private void siparisVersetOnClick() {
+    private void siparisVersetOnClick(final int id) {
         Button siparisVer = (Button) findViewById(R.id.siparisver);
         //henüz siparişver butonu aktif değil
         siparisVer.setOnClickListener(new View.OnClickListener() {
@@ -45,12 +53,60 @@ public class SiparisEkle extends AppCompatActivity {
             public void onClick(View v) {
                 for(SiparisGetir sp : urunler){
                     if(sp.getUrunsayisi()>0){
-
-                        Toast.makeText(SiparisEkle.this, sp.getUrunadi() + sp.getUrunsayisi() + "\n", Toast.LENGTH_SHORT).show();
+                        bilgileriYaz(sp);
                     }
                 }
             }
         });
+    }
+
+    int siparisID;
+    private int siparisIdBelirle() {
+        DatabaseReference syRef = database.getReference("siparisler");
+        syRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+               siparisID = Integer.parseInt(dataSnapshot.getChildrenCount()+"")+1;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return siparisID;
+    }
+
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    private void bilgileriYaz(SiparisGetir sp){
+        //tarihi çekmek için
+        Date simdikiZaman = new Date();
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        //veritabanı referans gösterilir
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        //firebase tarafından kullanıcıya atanan user id çekilir
+        //id adlı değişkene aktarılır
+        final String garsonid = user.getUid();
+        SiparisEkleController sec = new SiparisEkleController(masaBilgileri(), garsonid,
+                sp.getUrunsayisi(),urunIDGetir(sp.getUrunadi()),false,df.format(simdikiZaman));
+        //veritabanında musterilerin altına alınan id le birlikte veriler yazdırılır
+        mDatabase.child("siparisler").child(siparisID+"").setValue(sec);
+        siparisID++;
+
+    }
+
+    private int urunIDGetir(String urunadi) {
+        int urunid=0;
+        for(SiparisGetir sp : urunler){
+            if(sp.getUrunadi().equals(urunadi)){
+                urunid=sp.getUrunid();
+                break;
+            }
+        }
+        return urunid;
     }
 
     private void menuListele() {
@@ -75,8 +131,10 @@ public class SiparisEkle extends AppCompatActivity {
                 {
                     //ürün adları yeterli olduğundan ürün adlarını çekip stringe atıyoruz
                     String urunadi = (String) dataSnapshot.child(String.valueOf(i)).child("urunadi").getValue();
+                    long uid = (Long) dataSnapshot.child(String.valueOf(i)).child("urunid").getValue();
+                    int urunid = (int) uid;
                     //Siparis getir adında oluşturduğumuz modele göre ürün adını gönderidl
-                    urunler.add(new SiparisGetir(urunadi,0));
+                    urunler.add(new SiparisGetir(urunadi,urunid,0));
                 }
                 //forla verileri çektikten sonra menü listele metodu çağrıldı
                 menuListele();
@@ -89,14 +147,14 @@ public class SiparisEkle extends AppCompatActivity {
             }
         });
     }
-    private void masaBilgileri()
+    private int masaBilgileri()
     {
         //garson activityden seçilen masanumarasını çağırdık
         Bundle extras = getIntent().getExtras();
         //masa id adlı değişkene atadık
         int masaid = extras.getInt("masaNumarasi");
         //Textviewe masa numarasını atadık
-        TextView masa = (TextView) findViewById(R.id.textMasa);
-        masa.setText("Masa "+String.valueOf(masaid));
+
+        return masaid;
     }
 }

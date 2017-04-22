@@ -23,6 +23,7 @@
     <string name="parola6karakter">Parolanız en az 6 karakter olmalı!</string>
     <string name="epostagonderildi">Sıfırlama E-postası Başarıyla Gönderildi!</string>
     <string name="epostagonderilemedi">Lütfen Sistemimize Kayıtlı E-posta Giriniz!</string>
+    <string name="garsoncagir">Garson Çağır!</string>
 
 
 </resources>

@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="otomasyon.kafeotomasyonu.MusteriActivity">
-
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/btn_garson_cagir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kullanıcı Activity"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="47dp" />
+        android:text="@string/garsoncagir"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        style="@style/butonlar"/>
 
     <Button
         android:id="@+id/btn_cikisyap"

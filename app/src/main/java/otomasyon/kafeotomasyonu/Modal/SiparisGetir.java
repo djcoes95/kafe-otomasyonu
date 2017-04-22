@@ -7,10 +7,12 @@ package otomasyon.kafeotomasyonu.Modal;
 public class SiparisGetir {
 
     private String urunadi;
+    private int urunid;
     private int urunsayisi;
 
-    public SiparisGetir(String urunadi, int urunsayisi){
+    public SiparisGetir(String urunadi, int urunid,int urunsayisi){
         this.urunadi = urunadi;
+        this.urunid = urunid;
         this.urunsayisi = urunsayisi;
     }
 
@@ -20,6 +22,14 @@ public class SiparisGetir {
 
     public void setUrunsayisi(int urunsayisi) {
         this.urunsayisi = urunsayisi;
+    }
+
+    public int getUrunid() {
+        return urunid;
+    }
+
+    public void setUrunid(int urunid) {
+        this.urunid = urunid;
     }
 
     public String getUrunadi() {
