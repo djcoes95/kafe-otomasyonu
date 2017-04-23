@@ -24,6 +24,8 @@
     <string name="epostagonderildi">Sıfırlama E-postası Başarıyla Gönderildi!</string>
     <string name="epostagonderilemedi">Lütfen Sistemimize Kayıtlı E-posta Giriniz!</string>
     <string name="garsoncagir">Garson Çağır!</string>
+    <string name="siparisver">Sipariş Ver</string>
+    <string name="geri">Geri</string>
 
 
 </resources>

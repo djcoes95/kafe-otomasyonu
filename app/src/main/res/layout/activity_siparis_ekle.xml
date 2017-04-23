@@ -12,12 +12,7 @@
         android:id="@+id/textMasa"
         style="@style/basliklar"
         android:layout_centerHorizontal="true"/>
-    <!--<GridLayout-->
-        <!--android:layout_below="@id/textMasa"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/urunler">-->
-    <!--</GridLayout>-->
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,14 +28,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/siparisozet"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/siparis_ekrani_geri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/butonlar"
+            android:text="@string/geri"
+            android:layout_weight="1"/>
         <Button
             android:id="@+id/siparisver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/butonlar"
-            android:text="Sipariş Ver >"
-            android:layout_gravity="right"/>
+            android:text="@string/siparisver"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </RelativeLayout>

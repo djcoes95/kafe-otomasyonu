@@ -21,5 +21,6 @@
         android:layout_height="wrap_content"
         android:text="@string/cikisyap"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        style="@style/butonlar"/>
 </RelativeLayout>

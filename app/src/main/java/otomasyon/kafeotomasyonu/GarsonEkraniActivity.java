@@ -88,6 +88,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
                 //masanumarasını diğer activityde kullanmak için gönderdik
                 i.putExtra("masaNumarasi",id);
                 startActivity(i);
+                finish();
             }
         });
         }

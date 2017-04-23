@@ -1,5 +1,6 @@
 package otomasyon.kafeotomasyonu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -43,6 +44,21 @@ public class SiparisEkle extends AppCompatActivity {
         //sipariş ver butonuna tıklandığında olacaklar
         int id = siparisIdBelirle();
         siparisVersetOnClick(id);
+
+        //geri butonuna basıldığında
+        gerisetOnClick();
+    }
+
+    private void gerisetOnClick() {
+        Button geri = (Button) findViewById(R.id.siparis_ekrani_geri);
+        geri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SiparisEkle.this, GarsonEkraniActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 
     private void siparisVersetOnClick(final int id) {
@@ -96,6 +112,8 @@ public class SiparisEkle extends AppCompatActivity {
         mDatabase.child("siparisler").child(siparisID+"").setValue(sec);
         siparisID++;
 
+        Intent i = new Intent(this,GarsonEkraniActivity.class);
+        startActivity(i);
     }
 
     private int urunIDGetir(String urunadi) {
@@ -129,7 +147,7 @@ public class SiparisEkle extends AppCompatActivity {
                 //for döngüsüyle tüm ürünleri geziyoruz
                 for (int i=1;i<=Integer.parseInt(dataSnapshot.getChildrenCount()+"");i++)
                 {
-                    //ürün adları yeterli olduğundan ürün adlarını çekip stringe atıyoruz
+                    //ürün adlarını çekip stringe atıyoruz
                     String urunadi = (String) dataSnapshot.child(String.valueOf(i)).child("urunadi").getValue();
                     long uid = (Long) dataSnapshot.child(String.valueOf(i)).child("urunid").getValue();
                     int urunid = (int) uid;
