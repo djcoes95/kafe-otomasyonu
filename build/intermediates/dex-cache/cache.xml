@@ -3,21 +3,39 @@
 
     <item
         is-multidex="false"
-        jar="/home/bilal/.android/build-cache/a949042fc98f1f4f215664cdf2d058420fb2eca0/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/classes_3a8ee891ec8c55a2abe0d7f1cbd7eee531d4c6e8.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/bilal/.android/build-cache/f070c34f1b74e5d86d6e3615b91b33db058110c8/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
         <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/classes_85f1eb515fd8849a2d743b170c3c7912098f628d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/bilal/.android/build-cache/f070c34f1b74e5d86d6e3615b91b33db058110c8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_85f1eb515fd8849a2d743b170c3c7912098f628d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/bilal/StudioProjects/kafe/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_56df15abffab79bf18fd8a6ebdc1a1004af3ab37/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/bilal/.android/build-cache/a949042fc98f1f4f215664cdf2d058420fb2eca0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3a8ee891ec8c55a2abe0d7f1cbd7eee531d4c6e8/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -27,6 +45,33 @@
         revision="25.0.2"
         sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
         <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/core-3.2.1_9f0f48138414ebb9dc98dfededc2a110a1d4fc92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bilal/.android/build-cache/a949042fc98f1f4f215664cdf2d058420fb2eca0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/classes_3a8ee891ec8c55a2abe0d7f1cbd7eee531d4c6e8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/bilal/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10/core-3.2.1_9f0f48138414ebb9dc98dfededc2a110a1d4fc92/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/bilal/StudioProjects/kafe/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0e31ea304b6499c95b4068e2328d5c134f88ddb1">
+        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_21f7a3d7f886b71cd2eaafd2ef9c92cce63c3a28/classes.dex" />
     </item>
 
 </items>

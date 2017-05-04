@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,9 +28,9 @@ public class LoginActivity extends AppCompatActivity {
     Button girisYap, parolasifirla;
     EditText mail,parola;
     String email, password;
+    ProgressBar pb;
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         parola = (EditText) findViewById(R.id.et_parola);
         girisYap= (Button) findViewById(R.id.btn_giris);
         parolasifirla= (Button) findViewById(R.id.btn_parolasifirla);
+        pb= (ProgressBar) findViewById(R.id.pb_login);
 
         //giriş yap butonuna tıklayınca çalışacak metot
         setOnGirisYapListener();
@@ -70,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         girisYap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pb.setVisibility(View.VISIBLE);
                 // mail alanına yazılan veriyi email değişkenine attık
                 email = mail.getText().toString();
                 // parola alanına yazılan veriyi password değişkenine attık
@@ -97,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                                         return;
                                     }
                                     if (!task.isSuccessful()) {
+                                        pb.setVisibility(View.GONE);
                                         //eğer giriş başarılı değilse hata döndürdük
                                         Toast.makeText(LoginActivity.this, R.string.girishatasi, Toast.LENGTH_SHORT).show();
 

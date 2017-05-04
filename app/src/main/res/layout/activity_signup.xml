@@ -60,6 +60,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_kayitol"
             style="@style/butonlar"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/pb_signup"
+            android:visibility="gone"/>
     </LinearLayout>
 
 </RelativeLayout>

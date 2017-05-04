@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ public class SignupActivity extends AppCompatActivity {
     EditText mail,parola,adSoyad;
     //firebase gerekliler
     private FirebaseAuth mAuth;
+    ProgressBar pb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,7 @@ public class SignupActivity extends AppCompatActivity {
         mail = (EditText) findViewById(R.id.et_kayit_mail);
         parola = (EditText) findViewById(R.id.et_kayit_parola);
         kayitOl= (Button) findViewById(R.id.btn_kayitol);
+        pb= (ProgressBar) findViewById(R.id.pb_signup);
         //kayıt ol butonuna tıklandıgında
         setOnKayitOlListener();
     }
@@ -68,25 +71,28 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this, R.string.parolagir , Toast.LENGTH_SHORT).show();
                     return;
                 }
+                //parola 6 karakterden küçükse hata döndür
+                if (parola.length()<6){
+                    parola.setError(getText(R.string.parola6karakter));
+                    return;
+                }
                 else {
+                    pb.setVisibility(View.VISIBLE);
                     //firebase hesağ oluşturma metodu mail ve parola gönderiyoruz
                     mAuth.createUserWithEmailAndPassword(mail.getText().toString(), parola.getText().toString())
                             .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    //parola 6 karakterden küçükse hata döndür
-                                    if (parola.length()<6){
-                                        parola.setError(getText(R.string.parola6karakter));
-                                        return;
-                                    }
                                     //kayıt başarısızsa
                                     if (!task.isSuccessful()) {
+                                        pb.setVisibility(View.GONE);
                                         Toast.makeText(SignupActivity.this, R.string.baglantihatasi, Toast.LENGTH_SHORT).show();
                                     }
                                     //kayıt başarılıysa
                                     else{
                                         //aldığımız ad soyad ve mail bilgileri veritabanına yazılır
                                         bilgileriYaz();
+                                        pb.setVisibility(View.GONE);
                                         //Ana activitye yönlendirilir
                                         Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                                         startActivity(intent);
