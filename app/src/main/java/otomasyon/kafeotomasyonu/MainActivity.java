@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Toast.makeText(MainActivity.this, "Menü Yükleniyor. Lütfen Bekleyin.", Toast.LENGTH_SHORT).show();
         //Menü getir metodunu çağırdık
         menuGetir();
         //Eğer kullanıcı daha önceden giriş yaptıysa önbellekte tutuluyor.

@@ -3,75 +3,255 @@
 
     <item
         is-multidex="false"
-        jar="/home/bilal/.android/build-cache/f070c34f1b74e5d86d6e3615b91b33db058110c8/output/jars/classes.jar"
+        jar="C:\Users\Bilal\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.2.1\2287494d4f5f9f3a9a2bb6980e3f32053721b315\core-3.2.1.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/classes_85f1eb515fd8849a2d743b170c3c7912098f628d.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/bilal/.android/build-cache/f070c34f1b74e5d86d6e3615b91b33db058110c8/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_85f1eb515fd8849a2d743b170c3c7912098f628d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/bilal/StudioProjects/kafe/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_56df15abffab79bf18fd8a6ebdc1a1004af3ab37/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/bilal/.android/build-cache/a949042fc98f1f4f215664cdf2d058420fb2eca0/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3a8ee891ec8c55a2abe0d7f1cbd7eee531d4c6e8/classes.dex" />
+        revision="25.0.3"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\core-3.2.1_78dbf30f816e4b65307de39fcb55662f37accc98.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/bilal/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
+        jar="C:\Users\Bilal\.android\build-cache\ee0ec1bb260cd4a36d40e335a67d57ee9314aaa0\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/core-3.2.1_9f0f48138414ebb9dc98dfededc2a110a1d4fc92.jar" />
+        revision="25.0.3"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_bddb35aa16292845ed81383ddaf1ff25b776b912.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/bilal/.android/build-cache/a949042fc98f1f4f215664cdf2d058420fb2eca0/output/jars/classes.jar"
+        jar="C:\Users\Bilal\.android\build-cache\e9a7c7a523325e948da5a857aec79a2269f9c723\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.2"
+        revision="25.0.3"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_20f4497535ded5430a22e863c82c0c388d4af400.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\9eea9c626a938861f314472c3e0bc462ff1c9e39\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_d38f58c676cf741ebfe6d4bab2ed827555153aba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\c8d201abdc144f541031de34f6e9c8df8652c3de\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
         sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/pre-dexed/debug/classes_3a8ee891ec8c55a2abe0d7f1cbd7eee531d4c6e8.jar" />
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_e116cb2d542c43000c0c9565c3c38d7d8903ff46.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/bilal/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\8bbd8e9abe4b6c0b95c50f3d6b6225ece2ed59b1\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10/core-3.2.1_9f0f48138414ebb9dc98dfededc2a110a1d4fc92/classes.dex" />
+        revision="25.0.3"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_8205cc82cc83dd6272d19fec64ce9454dc93261b.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/bilal/StudioProjects/kafe/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\5fc92ebed675657538957375d0efc6db08497b67\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="0e31ea304b6499c95b4068e2328d5c134f88ddb1">
-        <dex dex="/home/bilal/StudioProjects/kafe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_21f7a3d7f886b71cd2eaafd2ef9c92cce63c3a28/classes.dex" />
+        revision="25.0.3"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_fe8e5a8adc5d66dd6df2bd8023456611f1322815.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\9b12d1ca8b572e07a426a0f664934458571e0acb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_9eb0e7d7b33ec0c0bc40b5eea4beca1f240aad2b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\7a87a7b344a87d0a79a2dd3e808468f5436eb23c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_034c4362be4e1541b45e34593418c95f449eecff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\ab6532b08a033112a83e33cd3f0e774b8b61559e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_25327bd7ee71aa75942f73cf4a0afa7120c9b07c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\83adf20f5a6a6c9d6130f7c6b881925373f71a12\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_263225d2394932956a149baa8cb32c140374e4f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\ec080ac1f54f7cc38e77600c6697198718ae611e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_3ff886dca3e2b49bbdd03282506242ec77fb365a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_d239eca9cef8e460a0b4d4724af8ab44e202dad3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha8\constraint-layout-solver-1.0.0-alpha8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="80c371a4fd5e1b77f0e3a25b171356878543ffdd">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.0-alpha8_f4e6d145ce1841b75c9cd0be61c07c0dcc91b537.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\8a595323b50e68b6089fc2aeda6d84399423a8c5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_c5a6cec8158a15c506e8b63b83a2d9133cee7180.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\a69df0e69399c47c71019bae3e765f1c3ff28cbd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_9a066c11d931fb2caf0ebec6f024cd506605de61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\5f784529063f411f2364f70af54af70afbaa3707\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_1f8be7d5550e56547ecd69800b42fba1fd4eba4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\99b4393018746198b171e0ca1995058e76243724\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_160735b339ada8bf2c03972c865ce2f7818ea4f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\5d39dd00f236f4e60ba606a3d59a6829f5aef784\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_9d0083f8d4123bf444467e43df7600a8e4fc2595.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\d2f7141c9a3b62f72b8876a196dd67431e37fc7f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_fe697416ce58c612fc3769f63b77e03fcf84087d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\a0c777071e555090c5793e0b2a70d9652dce066b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_f99f717aa9ab4df2f67d6335f241d0a4215569a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\6c5b226c92c747d118e85dd53a57c383f79f1f08\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0e753ea8d0a2dea270da7d96a7d6e9d2e9c10f94">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_71d20683e52261d7e2c8122872e6bf6afe6bb449.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\6f6fc96ed2ca9e74e0563d05333e7a66e0d2acdd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_f11a11b6ab7a2f04fa55f46418f4420faff094d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\5e113e5b90f1ca3fe5510653d34949f73e957d23\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_2fe84a74e91f257613045580ca911343926818da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\36fc1ff4ee51b1e50525d2c270efdad36fb93e8d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_bfc85bff82e4aa1f1e5e3ba1d06d92ff2bf1b802.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\478e450295b1bbcdd1a19e3be886a2d03cc3c0cf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_9cfe7a20a196711e324f2536e23a2aa30e115b3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\a6b68b06e56906384f5095db020ed20a1e0fe9d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_b5c1d6cf200e3bc266b810102445ec157e95876f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bilal\.android\build-cache\bb5379b580d1c92ef0438819dd45a71c68aacd62\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Bilal\AndroidProje\kafe\app\build\intermediates\pre-dexed\debug\classes_a5f868e86af763f8b85d4987c414762b3e367f56.jar" />
     </item>
 
 </items>

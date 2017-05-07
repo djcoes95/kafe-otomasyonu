@@ -56,8 +56,9 @@
             android:text="@string/kayitol"
             android:layout_weight="1"
             style="@style/butonlar"/>
-    </LinearLayout>
 
+
+    </LinearLayout>
 
 
 </RelativeLayout>

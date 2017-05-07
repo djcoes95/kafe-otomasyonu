@@ -59,13 +59,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_parolasifirla"
             android:layout_gravity="center"
-            style="@style/butonlar"/>
+            style="@style/butonlar"
+            android:layout_margin="@dimen/activity_horizontal_margin"/>
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/pb_login"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:padding="@dimen/activity_horizontal_margin"/>
 
     </LinearLayout>
 
