@@ -1,11 +1,17 @@
 package otomasyon.kafeotomasyonu;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -13,6 +19,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import otomasyon.kafeotomasyonu.Modal.BildirimController;
 
 public class GarsonEkraniActivity extends AppCompatActivity {
     //firebase veritabanı işlemleri için gerekli
@@ -26,6 +34,7 @@ public class GarsonEkraniActivity extends AppCompatActivity {
         masaSayisi();
         //çıkış yap butonuna basıldığında
         cikisSetOnClick();
+        bildirimKontrol();
     }
     private void masaSayisi() {
         String masaSayisi="0";
@@ -107,5 +116,52 @@ public class GarsonEkraniActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void bildirimKontrol(){
+        DatabaseReference myRef = database.getReference("bildirimler");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //buton oluştur metoduna veritabanından masa sayısını çekip integer olarak parse ettik
+                long bld = dataSnapshot.getChildrenCount();
+                for(int i=0 ; i<bld ; i++){
+                    //BildirimController bc = new BildirimController(dataSnapshot.child(i).getValue());
+                    //BildirimController bc = dataSnapshot.child(String.valueOf(i)).getValue(BildirimController.class);
+                    notificationM(Integer.parseInt(String.valueOf(dataSnapshot.child(String.valueOf(i)).child("bildirimId").getValue())),Integer.parseInt(String.valueOf(dataSnapshot.child(String.valueOf(i)).child("masaId").getValue())));
+                }
+                veriSil(bld);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+    }
+    NotificationManager nm;
+    boolean isActive = false;
+    public void notificationM(int notifID,int masaID){
+        NotificationCompat.Builder noBuilder = new NotificationCompat.Builder(this);
+        noBuilder.setContentTitle("Gel Lan Buraya");
+        noBuilder.setContentText(String.valueOf(masaID)+" Numaralı masanın size ihtiyacı varmış !");
+        noBuilder.setTicker("Alert New Message");
+        noBuilder.setSmallIcon(R.mipmap.ic_launcher);
+
+        Intent moreInfoIntent = new Intent(this, GarsonEkraniActivity.class);
+        TaskStackBuilder taskStackBuilder = TaskStackBuilder.create(this);
+        taskStackBuilder.addParentStack(GarsonEkraniActivity.class);
+        taskStackBuilder.addNextIntent(moreInfoIntent);
+        PendingIntent pendingIntent = taskStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+        noBuilder.setContentIntent(pendingIntent);
+        nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.notify(notifID, noBuilder.build());
+        isActive = true;
+    }
+    public void veriSil(final long countID){
+        DatabaseReference myRef = database.getReference("bildirimler");
+        for (int i=0;i<countID;i++) {
+            myRef.child(String.valueOf(i)).removeValue();
+        }
     }
 }
