@@ -32,4 +32,5 @@
         style="@style/butonlar"
         android:text="@string/cikisyap"
         android:id="@+id/btn_garson_cikis"/>
+
 </RelativeLayout>

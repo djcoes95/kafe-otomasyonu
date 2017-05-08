@@ -1,16 +1,20 @@
 package otomasyon.kafeotomasyonu;
 
+import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,6 +40,8 @@ public class GarsonEkraniActivity extends AppCompatActivity {
         cikisSetOnClick();
         bildirimKontrol();
     }
+
+
     private void masaSayisi() {
         String masaSayisi="0";
         //veritabanında masalar kısmını referans gösterdik
@@ -117,27 +123,34 @@ public class GarsonEkraniActivity extends AppCompatActivity {
         });
 
     }
+
     public void bildirimKontrol(){
-        DatabaseReference myRef = database.getReference("bildirimler");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //buton oluştur metoduna veritabanından masa sayısını çekip integer olarak parse ettik
-                long bld = dataSnapshot.getChildrenCount();
-                for(int i=0 ; i<bld ; i++){
-                    //BildirimController bc = new BildirimController(dataSnapshot.child(i).getValue());
-                    //BildirimController bc = dataSnapshot.child(String.valueOf(i)).getValue(BildirimController.class);
-                    notificationM(Integer.parseInt(String.valueOf(dataSnapshot.child(String.valueOf(i)).child("bildirimId").getValue())),Integer.parseInt(String.valueOf(dataSnapshot.child(String.valueOf(i)).child("masaId").getValue())));
+        try {
+            DatabaseReference myRef = database.getReference("bildirimler");
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    //buton oluştur metoduna veritabanından masa sayısını çekip integer olarak parse ettik
+                    long bld = dataSnapshot.getChildrenCount();
+                    for (int i = 0; i < bld; i++) {
+                        //BildirimController bc = new BildirimController(dataSnapshot.child(i).getValue());
+                        //BildirimController bc = dataSnapshot.child(String.valueOf(i)).getValue(BildirimController.class);
+                        notificationM(Integer.parseInt(String.valueOf(dataSnapshot.child(String.valueOf(i)).child("bildirimId").getValue())), Integer.parseInt(String.valueOf(dataSnapshot.child(String.valueOf(i)).child("masaId").getValue())));
+                    }
+                    veriSil(Integer.parseInt(String.valueOf(bld)));
                 }
-                veriSil(bld);
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        });
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                    // ...
+                }
+            });
+        }
+        catch (Exception e){
+            System.out.print(e.getMessage());
+        }
     }
     NotificationManager nm;
     boolean isActive = false;
@@ -158,10 +171,15 @@ public class GarsonEkraniActivity extends AppCompatActivity {
         nm.notify(notifID, noBuilder.build());
         isActive = true;
     }
-    public void veriSil(final long countID){
-        DatabaseReference myRef = database.getReference("bildirimler");
-        for (int i=0;i<countID;i++) {
-            myRef.child(String.valueOf(i)).removeValue();
+    public void veriSil(int countID){
+        try {
+            DatabaseReference myRef = database.getReference("bildirimler");
+            for (int i = countID-1; 0 <= i; i--) {
+                myRef.child(String.valueOf(i)).removeValue();
+            }
+        }
+        catch (Exception e){
+            System.out.print(e.getMessage());
         }
     }
 }
